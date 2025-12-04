@@ -5,6 +5,6 @@ import * as React from "react";
 
 export type WhiteNoiseProps = {}
 
-export default function WhiteNoise(props: WhiteNoiseProps) {
+export function WhiteNoise(props: WhiteNoiseProps) {
 
 }

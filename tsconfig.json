@@ -1,17 +1,16 @@
 {
     "compilerOptions": {
-        "target": "ES2017",
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "allowJs": true,
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "noEmit": true,
+        "rootDir": "src",
+        "outDir": "dist",
         "module": "esnext",
         "moduleResolution": "bundler",
-        "allowSyntheticDefaultImports": true,
+        "target": "esnext",
+        "lib": ["dom", "dom.iterable", "esnext"],
         "jsx": "react-jsx",
-        "plugins": [{ "name": "typescript-plugin-css-modules" }]
+        "plugins": [{ "name": "typescript-plugin-css-modules" }],
+        "declaration": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true
     },
-    "exclude": ["node_modules"],
-    "include": ["**/*.ts", "**/*.tsx"]
+    "exclude": ["node_modules", "dist", "*.config.ts"]
 }
