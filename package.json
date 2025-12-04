@@ -1,11 +1,13 @@
 {
     "name": "@inman-sebastian/ui",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "type": "module",
     "private": false,
+    "repository": "https://github.com/inman-sebastian/ui",
     "publishConfig": {
         "registry": "https://npm.pkg.github.com"
     },
+    "files": ["components"],
     "exports": {
         "./components": "./components/index.ts"
     },
