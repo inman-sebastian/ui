@@ -1,0 +1,36 @@
+:where([split-text]) {
+  --shadow-color: currentColor;
+  --shadow-offset: 2ex;
+  --delay-offset: 0.01s;
+  --translate-y: 0;
+
+  text-shadow: 0 var(--shadow-offset) var(--shadow-color);
+  line-height: var(--shadow-offset);
+  white-space: pre-line;
+  position: relative;
+  user-select: none;
+  overflow: clip;
+
+  & > span {
+    display: inline-block;
+    will-change: translate;
+    translate: 0 var(--translate-y);
+    transition: translate 0.3s ease-in-out;
+    transition-delay: calc(sibling-index() * var(--delay-offset));
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    --translate-y: -100%;
+  }
+}
+
+:where(a:has([split-text]):hover, a:has([split-text]):focus-visible) {
+  :where([split-text]) {
+    --translate-y: -100%;
+  }
+}
