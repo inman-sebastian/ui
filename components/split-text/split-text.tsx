@@ -6,7 +6,7 @@ export type SplitTextProps = {
     children: string;
 }
 
-export default function SplitText({ children, ...props }: SplitTextProps) {
+export function SplitText({ children, ...props }: SplitTextProps) {
     const segmenter = new Intl.Segmenter(undefined, { granularity: "grapheme" });
     const characters = Array.from(segmenter.segment(children), s => s.segment.replace(/\s/, "\u00A0"));
 
