@@ -14,8 +14,7 @@ jobs:
       issues: write
 
     env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
     steps:
       - name: Checkout
