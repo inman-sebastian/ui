@@ -1,4 +1,4 @@
-:where([split-text]) {
+:where([ui-split-text]) {
   --shadow-color: currentColor;
   --shadow-offset: 2ex;
   --delay-offset: 0.01s;
@@ -29,7 +29,7 @@
   }
 }
 
-:where(a:has([split-text]):hover, a:has([split-text]):focus-visible) {
+:where(a:has([ui-split-text]):hover, a:has([ui-split-text]):focus-visible) {
   :where([split-text]) {
     --translate-y: -100%;
   }

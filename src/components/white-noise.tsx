@@ -1,7 +1,7 @@
 "use client";
 
-import "./white-noise.css";
 import * as React from "react";
+import "./white-noise.css";
 
 export type WhiteNoiseProps = {}
 

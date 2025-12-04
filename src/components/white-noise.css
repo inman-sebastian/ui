@@ -1,4 +1,4 @@
-:where([white-noise]) {
+:where([ui-white-noise]) {
     pointer-events: none;
     position: fixed;
     height: 100vh;
