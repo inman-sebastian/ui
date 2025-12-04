@@ -1,0 +1,33 @@
+@view-transition {
+  navigation: auto;
+}
+
+@property --body-size {
+  syntax: "<length>";
+  initial-value: 0px;
+  inherits: true;
+}
+
+body {
+  container: body / inline-size;
+  min-block-size: 100svb;
+  min-inline-size: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  &:where([inert], :has(dialog[open]:modal)) {
+    overflow-y: clip;
+  }
+
+  & > * {
+    --body-size: 100cqi;
+    flex: 0 1 auto;
+    min-inline-size: 0;
+    max-inline-size: 100%;
+  }
+
+  & > :where(:last-child:not(:only-child), footer:last-of-type) {
+    margin-block-start: auto;
+  }
+}
