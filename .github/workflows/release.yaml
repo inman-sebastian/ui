@@ -9,15 +9,19 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write      # for tags & releases
-      packages: write      # for publishing packages
-      issues: write        # for release notes
+      contents: write
+      packages: write
+      issues: write
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # required for semantic-release
+          fetch-depth: 0
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -28,18 +32,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          registry-url: https://npm.pkg.github.com
           cache: 'pnpm'
 
-      - name: Install
+      - name: Install Dependencies
         run: pnpm install
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build
         run: pnpm build
 
       - name: Release
         run: npx semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
