@@ -1,4 +1,7 @@
 :where([ui-icon]) {
+    --icon-size: var(--icon-size-base, 1rem);
+    height: var(--icon-size);
+    width: var(--icon-size);
     display: inline-grid;
     place-items: center;
     fill: currentColor;
@@ -6,5 +9,13 @@
     & > svg {
         max-width: 100%;
         max-height: 100%;
+    }
+
+    @media (min-width: 768px) {
+        --icon-size: var(--icon-size-md, var(--icon-size));
+    }
+
+    @media (min-width: 1024px) {
+        --icon-size: var(--icon-size-lg, var(--icon-size));
     }
 }
