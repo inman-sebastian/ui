@@ -1,4 +1,4 @@
-export function IconJavascriptLogo(props: React.SVGProps<SVGSVGElement>) {
+export function IconJavaSriptLogo(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 630 630" {...props}>
       <rect width="630" height="630" fill="#f7df1e" />
