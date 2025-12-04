@@ -11,6 +11,10 @@
         max-height: 100%;
     }
 
+    @media (min-width: 640px) {
+        --icon-size: var(--icon-size-sm, var(--icon-size));
+    }
+
     @media (min-width: 768px) {
         --icon-size: var(--icon-size-md, var(--icon-size));
     }
