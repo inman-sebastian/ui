@@ -8,6 +8,7 @@ export type IconProps = Omit<React.SVGProps<SVGSVGElement>, "aria-hidden"> & {
     "size:sm"?: `${number}${string}`;
     "size:md"?: `${number}${string}`;
     "size:lg"?: `${number}${string}`;
+    "size:xl"?: `${number}${string}`;
 }
 
 function IconComponent({ name, ...props }: IconProps) {
@@ -16,7 +17,7 @@ function IconComponent({ name, ...props }: IconProps) {
 }
 
 export function Icon({ name, ...props }: IconProps) {
-    const { size = "1rem", "size:sm": sizeSm, "size:md": sizeMd, "size:lg": sizeLg, ...rest } = props;
+    const { size = "1rem", "size:sm": sizeSm, "size:md": sizeMd, "size:lg": sizeLg, "size:xl": sizeXl, ...rest } = props;
 
     const styleVariables = useMemo(() => {
         const styles = new Map<string, string>();
@@ -24,8 +25,9 @@ export function Icon({ name, ...props }: IconProps) {
         sizeSm && styles.set("--icon-size-sm", sizeSm);
         sizeMd && styles.set("--icon-size-md", sizeMd);
         sizeLg && styles.set("--icon-size-lg", sizeLg);
+        sizeXl && styles.set("--icon-size-xl", sizeXl);
         return styles.size ? Object.fromEntries(styles) : undefined;
-    }, [size, sizeSm, sizeMd, sizeLg]);
+    }, [size, sizeSm, sizeMd, sizeLg, sizeXl]);
 
     return (<div ui-icon={name} style={styleVariables}>
         <Suspense fallback={null}>

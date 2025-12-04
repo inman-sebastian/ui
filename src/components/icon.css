@@ -22,4 +22,8 @@
     @media (min-width: 1024px) {
         --icon-size: var(--icon-size-lg, var(--icon-size));
     }
+
+    @media (min-width: 1280px) {
+        --icon-size: var(--icon-size-xl, var(--icon-size));
+    }
 }
